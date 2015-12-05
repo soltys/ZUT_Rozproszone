@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MatrixService.Common
+namespace Soltys.MatrixService.DTO
 {
     [DataContract]
     public class MathMatrix
@@ -21,16 +21,16 @@ namespace MatrixService.Common
         {
             int[][] result = MatrixCreate(Rows, b.Columns);
 
-            for (int aRow = 0; aRow < Rows; ++aRow)
+            Parallel.For(0, Rows, aRow =>
             {
                 for (int bColumn = 0; bColumn < b.Columns; ++bColumn)
                 {
                     for (int aColumn = 0; aColumn < Columns; ++aColumn)
                     {
-                        result[aRow][bColumn] += Data[aRow][aColumn] * b.Data[aColumn][bColumn];
+                        result[aRow][bColumn] += Data[aRow][aColumn]*b.Data[aColumn][bColumn];
                     }
                 }
-            }
+            });
             return result;
         }
 
@@ -46,20 +46,20 @@ namespace MatrixService.Common
     }
 
     [DataContract]
-    public class MatrixResponse
+    public class MatrixRes
     {
         [DataMember]
         public MathMatrix Matrix { get; set; }
         [DataMember]
-        public MetaResponse Meta { get; set; }
+        public MetaRes Meta { get; set; }
     }
 
     [DataContract]
-    public class MetaResponse
+    public class MetaRes
     {
         private DateTime _time;
 
-        public MetaResponse()
+        public MetaRes()
         {
             _time = DateTime.Now;
         }

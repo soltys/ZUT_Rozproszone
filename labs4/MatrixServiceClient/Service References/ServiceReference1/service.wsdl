@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MatrixService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Soltys.MatrixService.DTO" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IMatrixService_MultiplyMatrix_InputMessage">
+    <wsdl:part name="parameters" element="tns:MultiplyMatrix" />
+  </wsdl:message>
+  <wsdl:message name="IMatrixService_MultiplyMatrix_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MultiplyMatrixResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatrixService_MultiplyMatrixById_InputMessage">
+    <wsdl:part name="parameters" element="tns:MultiplyMatrixById" />
+  </wsdl:message>
+  <wsdl:message name="IMatrixService_MultiplyMatrixById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MultiplyMatrixByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatrixService_GenerateMatrix_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateMatrix" />
+  </wsdl:message>
+  <wsdl:message name="IMatrixService_GenerateMatrix_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateMatrixResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatrixService_GenerateMatrixWithId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateMatrixWithId" />
+  </wsdl:message>
+  <wsdl:message name="IMatrixService_GenerateMatrixWithId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateMatrixWithIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatrixService_GetMatrixById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMatrixById" />
+  </wsdl:message>
+  <wsdl:message name="IMatrixService_GetMatrixById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMatrixByIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IMatrixService">
+    <wsdl:operation name="MultiplyMatrix">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatrixService/MultiplyMatrix" message="tns:IMatrixService_MultiplyMatrix_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatrixService/MultiplyMatrixResponse" message="tns:IMatrixService_MultiplyMatrix_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MultiplyMatrixById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatrixService/MultiplyMatrixById" message="tns:IMatrixService_MultiplyMatrixById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatrixService/MultiplyMatrixByIdResponse" message="tns:IMatrixService_MultiplyMatrixById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateMatrix">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatrixService/GenerateMatrix" message="tns:IMatrixService_GenerateMatrix_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatrixService/GenerateMatrixResponse" message="tns:IMatrixService_GenerateMatrix_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateMatrixWithId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatrixService/GenerateMatrixWithId" message="tns:IMatrixService_GenerateMatrixWithId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatrixService/GenerateMatrixWithIdResponse" message="tns:IMatrixService_GenerateMatrixWithId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMatrixById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatrixService/GetMatrixById" message="tns:IMatrixService_GetMatrixById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatrixService/GetMatrixByIdResponse" message="tns:IMatrixService_GetMatrixById_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IMatrixService" type="tns:IMatrixService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="MultiplyMatrix">
+      <soap:operation soapAction="http://tempuri.org/IMatrixService/MultiplyMatrix" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MultiplyMatrixById">
+      <soap:operation soapAction="http://tempuri.org/IMatrixService/MultiplyMatrixById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateMatrix">
+      <soap:operation soapAction="http://tempuri.org/IMatrixService/GenerateMatrix" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateMatrixWithId">
+      <soap:operation soapAction="http://tempuri.org/IMatrixService/GenerateMatrixWithId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMatrixById">
+      <soap:operation soapAction="http://tempuri.org/IMatrixService/GetMatrixById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MatrixService">
+    <wsdl:port name="BasicHttpBinding_IMatrixService" binding="tns:BasicHttpBinding_IMatrixService">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/MatrixService/MatrixService/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

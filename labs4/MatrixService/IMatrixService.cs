@@ -1,25 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.Text;
-using MatrixService.Common;
+﻿using System.ServiceModel;
+using Soltys.MatrixService.DTO;
 
-namespace MatrixService
+namespace Soltys.Service
 {
     [ServiceContract]
     public interface IMatrixService
     {
 
         [OperationContract]
-        MatrixResponse MultiplyMatrix(MathMatrix a, MathMatrix b);
+        MatrixRes MultiplyMatrix(MathMatrix a, MathMatrix b);
 
         [OperationContract]
-        MatrixResponse MultiplyMatrixById(int aId, int bId);
+        MatrixRes MultiplyMatrixById(int aId, int bId);
 
+        [OperationContract]
+        MatrixRes GenerateMatrix(int rows, int columns);
 
+        [OperationContract]
+        int GenerateMatrixWithId(int rows, int columns);
+
+        [OperationContract]
+        MatrixRes GetMatrixById(int id);
+
+      
 
 
     }

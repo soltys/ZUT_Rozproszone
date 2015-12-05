@@ -5,7 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MatrixService.Common
+
+namespace Soltys.MatrixService.DTO
 {
     public class ServiceActions
     {
@@ -22,15 +23,15 @@ namespace MatrixService.Common
         }
 
 
-        public static bool CheckIfMatrixIdExists(int id, out string filePath, ref MatrixResponse matrixResponse)
+        public static bool CheckIfMatrixIdExists(int id, out string filePath, ref MatrixRes matrixRes)
         {
             filePath = Path.Combine("./matrix", id + ".txt");
             if (!File.Exists(filePath))
             {
                 {
-                    matrixResponse = new MatrixResponse
+                    matrixRes = new MatrixRes
                     {
-                        Meta = new MetaResponse
+                        Meta = new MetaRes
                         {
                             Message = string.Format("Matrix with set id {0} do not exist", id),
                             Status = -1
@@ -81,16 +82,16 @@ namespace MatrixService.Common
 
 
 
-        public static bool CheckMatrixData(MathMatrix a, MathMatrix b, ref MatrixResponse multiplyMatrix)
+        public static bool CheckMatrixData(MathMatrix a, MathMatrix b, ref MatrixRes multiplyMatrix)
         {
             //matrix check
 
             if (a.Columns != b.Rows)
             {
                 {
-                    multiplyMatrix = new MatrixResponse
+                    multiplyMatrix = new MatrixRes
                     {
-                        Meta = new MetaResponse
+                        Meta = new MetaRes
                         {
                             Message = "Multiplication imposible",
                             Status = 1,
@@ -104,9 +105,9 @@ namespace MatrixService.Common
             if (a.Rows <= 0 || b.Rows <= 0 || a.Columns <= 0 || b.Columns <= 0)
             {
                 {
-                    multiplyMatrix = new MatrixResponse
+                    multiplyMatrix = new MatrixRes
                     {
-                        Meta = new MetaResponse
+                        Meta = new MetaRes
                         {
                             Message = "Every matrix dimention need to be positive",
                             Status = 1,
@@ -119,9 +120,9 @@ namespace MatrixService.Common
             if (a.Data == null || b.Data == null)
             {
                 {
-                    multiplyMatrix = new MatrixResponse
+                    multiplyMatrix = new MatrixRes
                     {
-                        Meta = new MetaResponse
+                        Meta = new MetaRes
                         {
                             Message = "Data cannot be null",
                             Status = 1,
@@ -135,9 +136,9 @@ namespace MatrixService.Common
             if (a.Data.Length != a.Rows || b.Data.Length != b.Rows)
             {
                 {
-                    multiplyMatrix = new MatrixResponse
+                    multiplyMatrix = new MatrixRes
                     {
-                        Meta = new MetaResponse
+                        Meta = new MetaRes
                         {
                             Message = "Declared rows size not meet with data",
                             Status = 1,
@@ -151,9 +152,9 @@ namespace MatrixService.Common
             if (ColumnCheck(a) || ColumnCheck(a))
             {
                 {
-                    multiplyMatrix = new MatrixResponse
+                    multiplyMatrix = new MatrixRes
                     {
-                        Meta = new MetaResponse
+                        Meta = new MetaRes
                         {
                             Message = "Declared column size not meet with data",
                             Status = 1,

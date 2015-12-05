@@ -1,15 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixService", "MatrixService\MatrixService.csproj", "{EC9B31E3-1529-4185-A484-B8F030B85756}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Soltys.MatrixService", "MatrixService\Soltys.MatrixService.csproj", "{EC9B31E3-1529-4185-A484-B8F030B85756}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CEAF5DE3-910B-4961-83A4-D97DA5A0A128} = {CEAF5DE3-910B-4961-83A4-D97DA5A0A128}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixService.Client", "MatrixServiceClient\MatrixService.Client.csproj", "{B559CCAB-A32B-42FC-9FCA-9865118B7EDD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Soltys.MatrixService.Client", "MatrixServiceClient\Soltys.MatrixService.Client.csproj", "{B559CCAB-A32B-42FC-9FCA-9865118B7EDD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EC9B31E3-1529-4185-A484-B8F030B85756} = {EC9B31E3-1529-4185-A484-B8F030B85756}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenerateMatrixService", "GenerateMatrixService\GenerateMatrixService.csproj", "{CEAF5DE3-910B-4961-83A4-D97DA5A0A128}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Soltys.GenerateMatrixService", "GenerateMatrixService\Soltys.GenerateMatrixService.csproj", "{CEAF5DE3-910B-4961-83A4-D97DA5A0A128}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixService.Common", "MatrixService\MatrixService.Common\MatrixService.Common.csproj", "{16E85412-F68B-43D9-9C75-02538896B293}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Soltys.MatrixService.Common", "MatrixService\MatrixService.Common\Soltys.MatrixService.Common.csproj", "{16E85412-F68B-43D9-9C75-02538896B293}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

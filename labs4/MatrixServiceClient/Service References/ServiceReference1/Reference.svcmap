@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2e41998c-260f-40cd-9484-c701a5265531" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/MatrixService/MatrixService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="786949e6-4de1-4f11-a522-ff970fbafd92" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/MatrixService/MatrixService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="63ad98b0-ea46-4e87-b40e-2325182e0b8d" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/MatrixService/MatrixService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="db7f7581-694e-4102-886a-af2de55e7bb9" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/MatrixService/MatrixService/mex" />
+    <MetadataFile FileName="Soltys.MatrixService.DTO.xsd" MetadataType="Schema" ID="b8f7af57-3177-40eb-a594-8b914f34f9a6" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/MatrixService/MatrixService/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="7bfaa418-ddbc-48cf-9407-fd808660667f" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/MatrixService/MatrixService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
